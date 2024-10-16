@@ -1,4 +1,5 @@
 import Navbar from "./Components/Navbar/Navbar"
+import PriceOptions from "./Components/PriceOptions/PriceOptions"
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
         <Navbar></Navbar>
 
         <h1 className='text-7xl'>Vite + React</h1>
+        <PriceOptions></PriceOptions>
       </div>
     </>
   )
