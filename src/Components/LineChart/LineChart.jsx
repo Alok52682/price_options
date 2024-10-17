@@ -22,6 +22,7 @@ const LineChart = () => {
                 <YAxis></YAxis>
                 <Line dataKey="math" stroke='red'></Line>
                 <Line dataKey={'physics'} stroke='yellow'></Line>
+                <Line dataKey={'chemistry'} stroke='green'></Line>
             </LChart>
         </div>
     );
