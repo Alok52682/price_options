@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Triangle } from "react-loader-spinner";
 import { BarChart, Bar, XAxis, YAxis, Tooltip } from 'recharts';
 
 const Phones = () => {
     const [phones, setPhones] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         // fetch(`https://openapi.programming-hero.com/api/phones?search=iphone`)
@@ -19,12 +21,22 @@ const Phones = () => {
                     }
                     return obj;
                 })
-                setPhones(phonesWithFakeData)
+                setPhones(phonesWithFakeData);
+                setLoading(false);
             })
     }, [])
 
     return (
         <div>
+            {loading && <Triangle
+                visible={true}
+                height="80"
+                width="80"
+                color="#4fa94d"
+                ariaLabel="triangle-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+            />}
             <h2 className="text-5xl">{phones.length}</h2>
             <BarChart width={1200} height={400} data={phones}>
                 <Bar dataKey="price" fill="#8884d8" />
