@@ -28,7 +28,7 @@ const Phones = () => {
 
     return (
         <div>
-            {loading && <Triangle
+            {loading && <div className=""> <Triangle
                 visible={true}
                 height="80"
                 width="80"
@@ -36,7 +36,8 @@ const Phones = () => {
                 ariaLabel="triangle-loading"
                 wrapperStyle={{}}
                 wrapperClass=""
-            />}
+            />
+            </div>}
             <h2 className="text-5xl">{phones.length}</h2>
             <BarChart width={1200} height={400} data={phones}>
                 <Bar dataKey="price" fill="#8884d8" />
